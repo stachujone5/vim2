@@ -24,7 +24,7 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
 
-vim.o.clipboard = "unnamedplus"
+vim.api.nvim_set_option("clipboard", "unnamed")
 
 vim.keymap.set("n", "J", "mzJ`z")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
