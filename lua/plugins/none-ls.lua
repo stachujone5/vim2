@@ -7,12 +7,5 @@ return {
 				null_ls.builtins.formatting.stylua,
 			},
 		})
-
-		vim.api.nvim_set_keymap("n", "<C-s>", "", {
-			callback = function()
-				vim.lsp.buf.format()
-				vim.cmd("w!")
-			end,
-		})
-	end,
+	end
 }
