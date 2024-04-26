@@ -24,9 +24,14 @@ return {
 				capabilities = capabilities,
 			})
 
-			lspconfig.html.setup({
+			lspconfig.tailwindcss.setup({
 				capabilities = capabilities,
 			})
+
+			lspconfig.rust_analyzer.setup({
+				capabilities = capabilities,
+			})
+
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 			})
@@ -34,7 +39,6 @@ return {
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "L", vim.diagnostic.open_float, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
-
 		end,
 	},
 }
