@@ -6,9 +6,6 @@ vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.fillchars = { eob = " " }
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
@@ -35,10 +32,16 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 
-local augroup = vim.api.nvim_create_augroup("strdr4605", { clear = true })
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "typescript,typescriptreact",
-  group = augroup,
-  command = "compiler tsc | setlocal makeprg=npx\\ tsc",
+local highlight_on_yank_group = vim.api.nvim_create_augroup("highlight_on_yank", { clear = true })
+-- Autocommand for highlighting yanked text
+vim.api.nvim_create_autocmd("TextYankPost", {
+	group = highlight_on_yank_group,
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 150,
+			on_macro = true,
+		})
+	end,
 })
-

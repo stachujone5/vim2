@@ -1,52 +1,78 @@
 return {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-        "nvim-lua/plenary.nvim",
-        "MunifTanjim/nui.nvim",
-    },
-    config = function()
-        vim.keymap.set("n", "<leader>pv", "<Cmd>Neotree toggle<CR>")
+	"nvim-neo-tree/neo-tree.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"MunifTanjim/nui.nvim",
+	},
+	event = "VeryLazy",
+	keys = {
+		{ "<leader>pv", ":Neotree reveal position=float toggle<CR>", silent = true, desc = "Float File Explorer" },
+	},
+	config = function()
+		require("neo-tree").setup({
+			source_selector = {
+				winbar = true,
+				statusline = false,
+			},
+			update_focused_file = {
+				enable = true,
+			},
 
-        require("neo-tree").setup({
-            default_component_configs = {
-                name = {
-                    use_git_status_colors = false,
-                },
-                git_status = {
-                    symbols = {
-                        -- Don't show any icons in the file tree
-                        added = "",
-                        modified = "",
-                        deleted = "",
-                        renamed = "",
-                        untracked = "",
-                        ignored = "",
-                        unstaged = "",
-                        staged = "",
-                        conflict = "",
-                    },
-                },
-            },
-            window = {
-                mappings = {
-                    ["<tab>"] = { "toggle_preview", config = { use_float = true } },
-                },
-            },
-            filesystem = {
-                filtered_items = {
-                    visible = true, -- when true, they will just be displayed differently than normal items
-                    hide_dotfiles = false,
-                    hide_gitignored = false,
-                    never_show = { -- remains hidden even if visible is toggled to true, this overrides always_show
-                        ".git",
-                    },
-                },
-                follow_current_file = true, -- This will find and focus the file in the active buffer every
-            },
-            buffers = {
-                follow_current_file = true, -- This will find and focus the file in the active buffer every
-            },
-        })
-    end,
+			close_if_last_window = true,
+			popup_border_style = "rounded",
+			enable_git_status = true,
+			enable_modified_markers = true,
+			enable_diagnostics = true,
+			sort_case_insensitive = true,
+			default_component_configs = {
+				indent = {
+					with_markers = true,
+					with_expanders = true,
+				},
+				modified = {
+					symbol = " ",
+					highlight = "NeoTreeModified",
+				},
+				icon = {
+					folder_closed = "",
+					folder_open = "",
+					folder_empty = "",
+					folder_empty_open = "",
+				},
+				git_status = {
+					symbols = {
+						-- Change type
+						added = "",
+						deleted = "",
+						modified = "",
+						renamed = "",
+						-- Status type
+						untracked = "",
+						ignored = "",
+						unstaged = "",
+						staged = "",
+						conflict = "",
+					},
+				},
+			},
+			window = {
+				position = "float",
+			},
+			filesystem = {
+				filtered_items = {
+					visible = true,
+					hide_dotfiles = false,
+					hide_gitignored = false,
+					never_show = {
+						".git",
+					},
+				},
+				follow_current_file = true,
+			},
+			buffers = {
+				follow_current_file = true,
+			},
+		})
+	end,
 }
