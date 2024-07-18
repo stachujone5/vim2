@@ -10,7 +10,9 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.wo.wrap = true
+vim.wo.linebreak = true
+vim.wo.list = false -- extra option I set in addition to the ones in your question
 
 vim.opt.hlsearch = true
 vim.opt.incsearch = true
@@ -31,6 +33,9 @@ vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
+vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+vim.keymap.set("n", "L", vim.diagnostic.open_float, {})
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 
 local highlight_on_yank_group = vim.api.nvim_create_augroup("highlight_on_yank", { clear = true })
 -- Autocommand for highlighting yanked text

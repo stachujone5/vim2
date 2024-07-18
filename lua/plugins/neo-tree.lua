@@ -7,7 +7,7 @@ return {
 	},
 	event = "VeryLazy",
 	keys = {
-		{ "<leader>pv", ":Neotree reveal position=float toggle<CR>", silent = true, desc = "Float File Explorer" },
+		{ "<leader>pv", ":Neotree toggle left<CR>", silent = true, desc = "Left File Explorer" },
 	},
 	config = function()
 		require("neo-tree").setup({
@@ -15,10 +15,6 @@ return {
 				winbar = true,
 				statusline = false,
 			},
-			update_focused_file = {
-				enable = true,
-			},
-
 			close_if_last_window = true,
 			popup_border_style = "rounded",
 			enable_git_status = true,
@@ -57,7 +53,8 @@ return {
 				},
 			},
 			window = {
-				position = "float",
+				position = "left",
+				width = 35,
 			},
 			filesystem = {
 				filtered_items = {
