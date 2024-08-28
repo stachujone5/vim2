@@ -5,4 +5,5 @@ return {
         tailwindcss = {},
         prismals = {},
         rust_analyzer = {},
+        gopls = {},
 }

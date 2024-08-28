@@ -36,6 +36,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "L", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {})
 
 local highlight_on_yank_group = vim.api.nvim_create_augroup("highlight_on_yank", { clear = true })
 -- Autocommand for highlighting yanked text
