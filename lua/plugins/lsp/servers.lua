@@ -1,9 +1,10 @@
 return {
-        jsonls = {},
-        lua_ls = {},
-        tsserver = {},
-        tailwindcss = {},
-        prismals = {},
-        rust_analyzer = {},
-        gopls = {},
+	jsonls = {},
+	lua_ls = {},
+	tsserver = {},
+	tailwindcss = {},
+	prismals = {},
+	rust_analyzer = {},
+	gopls = {},
+	clangd = {},
 }

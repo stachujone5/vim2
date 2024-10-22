@@ -7,6 +7,7 @@ return {
 				-- Each of one of these needs to be added in the configuration for none-ls.nvim
 				ensure_installed = {
 					"prettierd",
+					"gopls",
 					"stylua",
 					"eslint_d",
 				},
@@ -38,7 +39,7 @@ return {
 					filter = function(client)
 						-- Needs to be done better - prettier and eslint_d formatted via lsp not null-ls are bugged
 						local filetype = vim.bo.filetype
-						if filetype == "rust" or filetype == "go" then
+						if filetype == "rust" or filetype == "go" or filetype == "c" then
 							return true
 						else
 							return client.name == "null-ls"
