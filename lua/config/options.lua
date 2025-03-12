@@ -1,28 +1,27 @@
 vim.g.mapleader = " "
+local opt = vim.opt
+vim.g.loaded_netrwPlugin = 0
+vim.g.loaded_netrw = 0
 
-vim.g.loaded_netrwPlugin = 1
-vim.g.loaded_netrw = 1
-vim.opt.nu = true
-vim.opt.relativenumber = true
-vim.opt.fillchars = { eob = " " }
-
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
-
-vim.wo.wrap = true
-vim.wo.linebreak = true
-vim.wo.list = false -- extra option I set in addition to the ones in your question
-
-vim.opt.hlsearch = true
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-
-vim.opt.updatetime = 50
+opt.encoding = "utf-8"
+opt.expandtab = true
+opt.nu = true
+opt.errorbells = false
+opt.wrap = false
+opt.smartcase = true
+opt.swapfile = false
+opt.backup = false
+opt.incsearch = true
+opt.autoindent = true
+opt.hlsearch = false
+opt.completeopt = "menu,menuone,noselect"
+opt.sw = 2
+opt.ts = 2
+opt.sts = 2
+opt.fillchars = { eob = " " }
+opt.cmdheight = 0
+vim.o.signcolumn = "yes:1"
+vim.o.background = "dark"
 
 vim.api.nvim_set_option("clipboard", "unnamed")
 
@@ -37,17 +36,18 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "L", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {})
+vim.keymap.set("n", "<C-f>", vim.lsp.buf.format, {})
 
 local highlight_on_yank_group = vim.api.nvim_create_augroup("highlight_on_yank", { clear = true })
 -- Autocommand for highlighting yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
-	group = highlight_on_yank_group,
-	pattern = "*",
-	callback = function()
-		vim.highlight.on_yank({
-			higroup = "IncSearch",
-			timeout = 150,
-			on_macro = true,
-		})
-	end,
+  group = highlight_on_yank_group,
+  pattern = "*",
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = "IncSearch",
+      timeout = 150,
+      on_macro = true,
+    })
+  end,
 })

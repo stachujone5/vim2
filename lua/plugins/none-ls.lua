@@ -9,7 +9,7 @@ return {
 					"prettierd",
 					"gopls",
 					"stylua",
-					"eslint_d",
+					"eslint",
 				},
 			})
 		end,
@@ -30,23 +30,10 @@ return {
 				nls.builtins.formatting.prettierd,
 
 				-- Linter
-				require("none-ls.code_actions.eslint_d"),
-				require("none-ls.diagnostics.eslint_d"),
+				require("none-ls.code_actions.eslint"),
+				require("none-ls.diagnostics.eslint"),
 			})
 
-			vim.keymap.set("n", "<C-f>", function()
-				vim.lsp.buf.format({
-					filter = function(client)
-						-- Needs to be done better - prettier and eslint_d formatted via lsp not null-ls are bugged
-						local filetype = vim.bo.filetype
-						if filetype == "rust" or filetype == "go" or filetype == "c" then
-							return true
-						else
-							return client.name == "null-ls"
-						end
-					end,
-				})
-			end)
 		end,
 	},
 }
