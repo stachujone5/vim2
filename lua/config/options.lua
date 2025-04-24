@@ -36,18 +36,33 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 vim.keymap.set("n", "L", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {})
-vim.keymap.set("n", "<C-f>", vim.lsp.buf.format, {})
+
+vim.diagnostic.config({
+	title = false,
+	underline = true,
+	virtual_text = true,
+	signs = true,
+	update_in_insert = false,
+	severity_sort = true,
+	float = {
+		source = "always",
+		style = "minimal",
+		border = "rounded",
+		header = "",
+		prefix = "",
+	},
+})
 
 local highlight_on_yank_group = vim.api.nvim_create_augroup("highlight_on_yank", { clear = true })
 -- Autocommand for highlighting yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
-  group = highlight_on_yank_group,
-  pattern = "*",
-  callback = function()
-    vim.highlight.on_yank({
-      higroup = "IncSearch",
-      timeout = 150,
-      on_macro = true,
-    })
-  end,
+	group = highlight_on_yank_group,
+	pattern = "*",
+	callback = function()
+		vim.highlight.on_yank({
+			higroup = "IncSearch",
+			timeout = 150,
+			on_macro = true,
+		})
+	end,
 })
