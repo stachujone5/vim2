@@ -1,10 +1,11 @@
 return {
-	jsonls = {},
-	lua_ls = {},
-	tsserver = {},
-	tailwindcss = {},
-	prismals = {},
-	rust_analyzer = {},
-	gopls = {},
-	clangd = {},
+  gopls = {
+    filetypes = { "go", "gomod" },
+  },
+  lua_ls = {
+    filetypes = { "lua" },
+  },
+  tsserver = {
+    filetypes = { "typescript", "typescriptreact" }
+  }
 }
