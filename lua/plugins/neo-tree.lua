@@ -1,16 +1,26 @@
 return {
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = {
-      on_attach = on_attach_change,
-      git = {
-        enable = true,
-        ignore = false,
-        timeout = 500,
-      },
-      update_focused_file = {
-        enable = true,
-      }
-    }
-  }
+	-- {
+	-- 	"nvim-tree/nvim-tree.lua",
+	-- 	opts = {
+	-- 		on_attach = on_attach_change,
+	-- 		git = {
+	-- 			enable = true,
+	-- 			ignore = false,
+	-- 			timeout = 500,
+	-- 		},
+	-- 		update_focused_file = {
+	-- 			enable = true,
+	-- 		},
+	-- 	},
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>pv",
+	-- 			function()
+	-- 				require("nvim-tree.api").tree.toggle()
+	-- 			end,
+	-- 			desc = "Toggle NvimTree",
+	-- 			mode = "n",
+	-- 		},
+	-- 	},
+	-- },
 }

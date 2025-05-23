@@ -1,7 +1,8 @@
 vim.g.mapleader = " "
 local opt = vim.opt
-vim.g.loaded_netrwPlugin = 0
-vim.g.loaded_netrw = 0
+-- vim.g.loaded_netrwPlugin = 0
+-- vim.g.loaded_netrw = 0
+vim.g.netrw_banner = 0
 
 opt.encoding = "utf-8"
 opt.expandtab = true

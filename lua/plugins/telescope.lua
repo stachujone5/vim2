@@ -5,18 +5,17 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.5",
-		dependencies = { "nvim-lua/plenary.nvim", "nvim-web-devicons" },
+		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
-
 			local actions = require("telescope.actions")
 
 			require("telescope").setup({
-defaults = {
-    layout_strategy = "vertical",
-    layout_config = { preview_cutoff = 0 },
-    file_ignore_patterns = {
-      "%.git/",
-    },
+				defaults = {
+					layout_strategy = "vertical",
+					layout_config = { preview_cutoff = 0 },
+					file_ignore_patterns = {
+						"%.git/",
+					},
 
 					mappings = {
 						i = {
@@ -24,13 +23,13 @@ defaults = {
 							["<C-j>"] = actions.move_selection_next,
 						},
 					},
-  },
-  pickers = {
-    lsp_references = { fname_width = 200 },
-    buffers = {
-      sort_lastused = true,
-    },
-  },
+				},
+				pickers = {
+					lsp_references = { fname_width = 200 },
+					buffers = {
+						sort_lastused = true,
+					},
+				},
 
 				extensions = {
 					["ui-select"] = {
