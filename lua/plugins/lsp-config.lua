@@ -31,7 +31,7 @@ return {
 				require("lspconfig")[server_name].setup({
 					capabilities = capabilities,
 					settings = require("plugins.lsp.servers")[server_name],
-					filetypes = require("plugins.lsp.servers")[server_name].filetypes,
+					-- filetypes = require("plugins.lsp.servers")[server_name].filetypes,
 				})
 			end,
 		})
