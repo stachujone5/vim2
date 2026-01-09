@@ -5,9 +5,6 @@ return {
 	lua_ls = {
 		filetypes = { "lua" },
 	},
-	tsserver = {
-		filetypes = { "typescript", "typescriptreact" },
-	},
 	rust_analyzer = {
 		filetypes = { "rust" },
 	},
