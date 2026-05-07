@@ -1,5 +1,6 @@
 require("config.options")
-require("plugins.github-theme")
+require("plugins.kanagawa")
+require("plugins.nvim-tree")
 require("plugins.telescope")
 require("plugins.nvim-treesitter")
 require("plugins.nvim-ts-autotag")

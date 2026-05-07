@@ -8,6 +8,10 @@
       "rev": "a62e1083a3cfe8b6b206e7d3d33a51091df25357",
       "src": "https://github.com/L3MON4D3/LuaSnip"
     },
+    "catppuccin": {
+      "rev": "426dbebe06b5c69fd846ceb17b42e12f890aedf1",
+      "src": "https://github.com/catppuccin/nvim"
+    },
     "cmp-buffer": {
       "rev": "b74fab3656eea9de20a9b8116afa3cfc4ec09657",
       "src": "https://github.com/hrsh7th/cmp-buffer"
@@ -32,6 +36,10 @@
       "rev": "c106c9472154d6b2c74b74565616b877ae8ed31d",
       "src": "https://github.com/projekt0n/github-nvim-theme"
     },
+    "kanagawa": {
+      "rev": "8ad3b4cdcc804b332c32db8f9743667e1bb82b99",
+      "src": "https://github.com/rebelot/kanagawa.nvim"
+    },
     "lspkind.nvim": {
       "rev": "c7274c48137396526b59d86232eabcdc7fed8a32",
       "src": "https://github.com/onsails/lspkind.nvim"
@@ -48,6 +56,10 @@
       "rev": "eab58b48eb11d7745c11c505e0f3057165902461",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
+    "nvim-tree.lua": {
+      "rev": "61d4d92c3a0a9c29e6c3e5b8d9246f06b89f1ba2b",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
     "nvim-treesitter": {
       "rev": "4916d6592ede8c07973490d9322f187e07dfefac",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -55,6 +67,10 @@
     "nvim-ts-autotag": {
       "rev": "88c1453db4ba7dd24131086fe51fdf74e587d275",
       "src": "https://github.com/windwp/nvim-ts-autotag"
+    },
+    "nvim-web-devicons": {
+      "rev": "f7d6d00e1e5e07c2e8def0090bbb7c07bae0e0a3",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",

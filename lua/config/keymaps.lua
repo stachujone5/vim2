@@ -1,6 +1,5 @@
 local format = require("config.format")
 local telescope_actions = require("telescope.actions")
-local telescope_builtin = require("telescope.builtin")
 local telescope = require("telescope")
 
 telescope.setup({
@@ -19,6 +18,14 @@ telescope.setup({
 	},
 })
 
+local builtin = require("telescope.builtin")
+vim.keymap.set("n", "ffw", builtin.grep_string, {})
+vim.keymap.set("n", "<C-p>", builtin.find_files, {})
+vim.keymap.set("n", "<leader>ps", builtin.live_grep, {})
+vim.keymap.set("n", "<leader>gs", builtin.git_status, {})
+vim.keymap.set("n", "gr", builtin.lsp_references, {})
+vim.keymap.set("n", "gd", builtin.lsp_definitions, {})
+
 telescope.load_extension("ui-select")
 
 vim.keymap.set("n", "J", "mzJ`z")
@@ -30,11 +37,6 @@ vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<C-b>", "<cmd>checktime<CR>", { desc = "Check file changes" })
 vim.keymap.set("n", "L", vim.diagnostic.open_float, { desc = "Line diagnostics" })
-
-vim.keymap.set("n", "ffw", telescope_builtin.grep_string, {})
-vim.keymap.set("n", "<C-p>", telescope_builtin.find_files, {})
-vim.keymap.set("n", "<leader>ps", telescope_builtin.live_grep, {})
-vim.keymap.set("n", "<leader>gs", telescope_builtin.git_status, {})
 
 vim.keymap.set("n", "<C-f>", function()
 	format.format_buffer(vim.api.nvim_get_current_buf())
@@ -48,8 +50,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		end
 
 		map("n", "K", vim.lsp.buf.hover, "LSP Hover")
-		map("n", "gd", vim.lsp.buf.definition, "Go to definition")
-		map("n", "gr", vim.lsp.buf.references, "References")
 		map("n", "<leader>r", vim.lsp.buf.rename, "Rename symbol")
 		map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, "Code action")
 	end,
