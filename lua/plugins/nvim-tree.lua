@@ -1,9 +1,15 @@
 vim.pack.add({
 	"https://github.com/nvim-tree/nvim-web-devicons",
+}, { load = true, confirm = false })
+
+vim.defer_fn(function()
+	require("nvim-web-devicons").setup()
+end, 0)
+
+vim.pack.add({
 	"https://github.com/nvim-tree/nvim-tree.lua",
 }, { load = true, confirm = false })
 
-require("nvim-web-devicons").setup()
 require("nvim-tree").setup({
 	disable_netrw = true,
 	hijack_netrw = true,
