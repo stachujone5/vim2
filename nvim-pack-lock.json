@@ -56,6 +56,10 @@
       "rev": "eab58b48eb11d7745c11c505e0f3057165902461",
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
+    "nvim-lspconfig": {
+      "rev": "bfcc0171a43f22afa61d927ffe9fcb6cb85dc99e",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
     "nvim-tree.lua": {
       "rev": "61d4d92c3a0a9c29e6c3e5b8d9246f06b89f1ba2b",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
@@ -76,6 +80,10 @@
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "real-icons.nvim": {
+      "rev": "9854bee83aa91e7172f0d072b544305129764e30",
+      "src": "https://github.com/Mirsmog/real-icons.nvim"
+    },
     "telescope-ui-select.nvim": {
       "rev": "6e51d7da30bd139a6950adf2a47fda6df9fa06d2",
       "src": "https://github.com/nvim-telescope/telescope-ui-select.nvim"
@@ -83,6 +91,10 @@
     "telescope.nvim": {
       "rev": "f04ab730b8f9c6bf3f54a206d0dcddfd70c52d59",
       "src": "https://github.com/nvim-telescope/telescope.nvim"
+    },
+    "xcodedark": {
+      "rev": "1e39372b9d40a4b690d5a21b9d49eaa5d50e3fbe",
+      "src": "https://github.com/fraeso/xcodedark.nvim"
     }
   }
 }

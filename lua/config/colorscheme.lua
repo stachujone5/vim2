@@ -4,7 +4,6 @@ vim.pack.add({
 
 require("kanagawa").setup({
 	colors = {
-		-- Remove background of line number colors
 		theme = { all = { ui = { bg_gutter = "none" } } },
 	},
 })
